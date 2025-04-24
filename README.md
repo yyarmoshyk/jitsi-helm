@@ -10,7 +10,7 @@ Conferences that you use as a standalone app or embed in your web application.
 ## TL;DR;
 
 ```bash
-helm repo add jitsi https://jitsi-contrib.github.io/jitsi-helm/
+helm repo add jitsi https://yyarmoshyk.github.io/jitsi-helm/
 helm install myjitsi jitsi/jitsi-meet
 ```
 
@@ -324,5 +324,5 @@ Parameter | Description | Default
 
 ```bash
 helm package . -d docs
-helm repo index docs --url https://jitsi-contrib.github.io/jitsi-helm/
+helm repo index docs --url https://yyarmoshyk.github.io/jitsi-helm/
 ```
