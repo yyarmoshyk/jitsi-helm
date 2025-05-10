@@ -2,8 +2,6 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-clusterSecretStoreName: ""
-
 global:
   # Set your cluster's DNS domain here.
   # "cluster.local" should work for most environments.
@@ -516,6 +514,7 @@ extraCommonEnvs: {}
 prosody:
   enabled: true
   useExternalProsody: false
+  clusterSecretStoreName: ""
   server:
   extraEnvFrom:
   - secretRef:
