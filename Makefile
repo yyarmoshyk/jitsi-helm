@@ -24,4 +24,5 @@ template:
 	echo helm template ${NS_FLAGS} ${VAL_FLAGS} --release-name ${NAME} . ${OUT_FLAGS}
 
 package:
-	echo helm package .
+	helm package . -d docs
+	helm repo index docs --url https://yyarmoshyk.github.io/jitsi-helm/
