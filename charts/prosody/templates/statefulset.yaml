@@ -56,6 +56,13 @@ spec:
           {{- end }}
           {{- if or (.Values.extraEnvs) (.Values.metrics.enabled) }}
           env:
+          {{- range $key, $value := .Values.externalSecretsNames }}
+          - name: {{ $value.envVar }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ include "prosody.fullname" . }}-{{ $key }}
+                key: {{ $key }}
+          {{- end }}
           {{- if .Values.metrics.enabled }}
           - name: PROSODY_ENABLE_METRICS
             value: "true"
