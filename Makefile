@@ -26,3 +26,4 @@ template:
 package:
 	helm package . -d docs
 	helm repo index docs --url https://yyarmoshyk.github.io/jitsi-helm/
+	git add docs/*

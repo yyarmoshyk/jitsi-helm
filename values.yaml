@@ -514,6 +514,8 @@ extraCommonEnvs: {}
 prosody:
   enabled: true
   useExternalProsody: false
+  clusterSecretStoreName: ""
+  externalSecretsNames: {}
   server:
   extraEnvFrom:
   - secretRef:
@@ -529,7 +531,6 @@ prosody:
   image:
     repository: jitsi/prosody
     tag: stable-10133
-
 
   # service:
   #   ports:
