@@ -530,6 +530,7 @@ prosody:
     repository: jitsi/prosody
     tag: stable-10133
 
+
   # service:
   #   ports:
   # If Prosody c2s in needed on private net outside the cluster
