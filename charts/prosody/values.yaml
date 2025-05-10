@@ -3,10 +3,16 @@
 # Declare variables to be passed into your templates.
 # clusterSecretStoreName:
 
-externalSecretsNames:
-  jitsi-app-secret:
-    envVar: JWT_APP_SECRET
-    gcsmRef: jitsi_app_secret
+# externalSecretsNames:
+#   jitsi-app-secret:
+#     envVar: JWT_APP_SECRET
+#     gcsmRef: jitsi_app_secret
+#   jitsi-accepted-issuers:
+#     envVar: JWT_ACCEPTED_ISSUERS
+#     gcsmRef: jitsi_accepted_domains
+#   jitsi-accepted-audiences:
+#     envVar: JWT_ACCEPTED_AUDIENCES
+#     gcsmRef: jitsi_accepted_domains
 
 image:
   repository: nginx

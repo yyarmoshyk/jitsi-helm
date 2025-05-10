@@ -515,6 +515,7 @@ prosody:
   enabled: true
   useExternalProsody: false
   clusterSecretStoreName: ""
+  externalSecretsNames: {}
   server:
   extraEnvFrom:
   - secretRef:
