@@ -1,6 +1,8 @@
 # Default values for prosody.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+# clusterSecretStoreName:
+
 externalSecretsNames:
   jitsi-app-secret:
     envVar: JWT_APP_SECRET

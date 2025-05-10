@@ -26,7 +26,7 @@ appVersion: stable-10133
 dependencies:
   - name: prosody
     condition: prosody.enabled
-    version: 1.5.0
+    version: 1.6.0
 
 ## Chart annotations (for ArtifactHub):
 annotations:

@@ -1,3 +1,6 @@
+{{- $fullname := include "prosody.fullname" . -}}
+
+
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -54,15 +57,18 @@ spec:
           - {{ tpl (toYaml . ) $ | indent 12 | trim }}
           {{- end }}
           {{- end }}
-          {{- if or (.Values.extraEnvs) (.Values.metrics.enabled) }}
+          {{- if $.Values.externalSecretsNames }}
+          {{- range $key, $value := $.Values.externalSecretsNames }}
           env:
-          {{- range $key, $value := .Values.externalSecretsNames }}
           - name: {{ $value.envVar }}
             valueFrom:
               secretKeyRef:
-                name: {{ include "prosody.fullname" . }}-{{ $key }}
+                name: {{ $fullname }}-{{ $key }}
                 key: {{ $key }}
           {{- end }}
+          {{- end }}
+          {{- if or (.Values.extraEnvs) (.Values.metrics.enabled) }}
+          env:
           {{- if .Values.metrics.enabled }}
           - name: PROSODY_ENABLE_METRICS
             value: "true"

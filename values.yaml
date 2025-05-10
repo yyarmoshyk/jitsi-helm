@@ -2,6 +2,8 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+clusterSecretStoreName: ""
+
 global:
   # Set your cluster's DNS domain here.
   # "cluster.local" should work for most environments.
@@ -529,7 +531,6 @@ prosody:
   image:
     repository: jitsi/prosody
     tag: stable-10133
-
 
   # service:
   #   ports:
